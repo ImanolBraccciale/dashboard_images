@@ -231,13 +231,13 @@ La aplicación utiliza hooks personalizados y un enrutamiento básico para la na
 
 ## Imagenes
 
-![Login Modal](https://github.com/ImanolBraccciale/dashboard_images/public/login.png)
-![Dashboard](/public\DASH.png)
-![Resultados ](/public\results.png)
-![Resultados Eliminados](/public\resulDel.png)
-![Accuión rápida](/public\2.png)
-![Panel ](/public\3.png)
-![Caso Her2](/public\case.png)
-![Zoom](/public\z.png)
-![Skeleton ](/public\skel.png)
-![Error ](/public\error.png)
+![Login Modal](/public/login.png)
+![Dashboard](/public/DASH.png)
+![Resultados ](/public/results.png)
+![Resultados Eliminados](/public/resulDel.png)
+![Accuión rápida](/public/2.png)
+![Panel ](/public/3.png)
+![Caso Her2](/public/case.png)
+![Zoom](/public/z.png)
+![Skeleton ](/public/skel.png)
+![Error ](/public/error.png)
