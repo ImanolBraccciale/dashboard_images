@@ -231,7 +231,7 @@ La aplicación utiliza hooks personalizados y un enrutamiento básico para la na
 
 ## Imagenes
 
-![Login Modal](/public\login.png)
+![Login Modal](https://github.com/ImanolBraccciale/dashboard_images/public/login.png)
 ![Dashboard](/public\DASH.png)
 ![Resultados ](/public\results.png)
 ![Resultados Eliminados](/public\resulDel.png)
