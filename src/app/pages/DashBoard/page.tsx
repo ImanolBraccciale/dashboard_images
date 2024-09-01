@@ -1,10 +1,11 @@
 "use client";
+import React, { useState } from 'react';
 import Sidebar from '@/app/components/Dashboard/Sidebar';
 import UploadImageModal from '@/app/components/Dashboard/UploadImageModal';
 import { useDashboard } from '@/app/Hooks/useDashboard';
-import React from 'react';
 
 const Dashboard: React.FC = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const {
     isModalOpen,
     handleCloseModal,
@@ -13,10 +14,19 @@ const Dashboard: React.FC = () => {
     renderMainContent,
   } = useDashboard();
 
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+
   return (
     <div className="flex min-h-screen">
-      <Sidebar onItemSelect={handleSidebarItemClick} />
-      <main className="flex-1 p-6 bg-gray-100">
+      {/* Sidebar */}
+      <Sidebar
+        onItemSelect={handleSidebarItemClick}
+        isOpen={isSidebarOpen}
+        onToggleSidebar={toggleSidebar}
+      />
+      <main
+        className={`flex-1 p-6 bg-gray-200 lg:ml-64`}
+      >
         {renderMainContent()}
         <UploadImageModal
           isOpen={isModalOpen}

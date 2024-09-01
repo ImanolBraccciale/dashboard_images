@@ -5,19 +5,19 @@ import EditResultModal from './EditResultModal';
 import ResultItemCard from './ResultItemCard';
 import LoadingState from './LoadingState';
 
-const ResultsSummary: React.FC<ResultsSummaryProps> = ({ visible =true, results, loading }) => {
-  const [filteredResults, setFilteredResults] = useState<ResultItem[]>([]);
-  const [selectedResult, setSelectedResult] = useState<ResultItem | null>(null);
+const ResultsSummary: React.FC<ResultsSummaryProps> = ({ visible = true, results, loading }) => {
+   const [selectedResult, setSelectedResult] = useState<ResultItem | null>(null);
+   const [filteredResults, setFilteredResults] = useState<ResultItem[]>([]);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showError, setShowError] = useState(false);
-
-  // Actualiza los resultados cuando cambien los props
+ 
   useEffect(() => {
-    setFilteredResults(results.filter(result => result.visible === visible));
+    const updatedResults = results.filter(result => result.visible === visible);
+    setFilteredResults(updatedResults);
   }, [results, visible]);
 
-  //esto es para que se pueda observar el loading por 3 seg
-   useEffect(() => {
+  useEffect(() => {
     if (loading) {
       const errorTimer = setTimeout(() => {
         setShowError(true);
@@ -29,8 +29,6 @@ const ResultsSummary: React.FC<ResultsSummaryProps> = ({ visible =true, results,
     }
   }, [loading]);
 
-
-  //manejadores para los diversos eventos
   const handleEditClick = useCallback((result: ResultItem) => {
     setSelectedResult(result);
     setIsModalOpen(true);
@@ -38,7 +36,9 @@ const ResultsSummary: React.FC<ResultsSummaryProps> = ({ visible =true, results,
 
   const handleUpdate = useCallback((updatedResult: ResultItem) => {
     setFilteredResults(prevResults =>
-      prevResults.map(r => (r.id === updatedResult.id ? updatedResult : r))
+      prevResults.map(r =>
+        r.id === updatedResult.id ? updatedResult : r
+      )
     );
     setSelectedResult(null);
     setIsModalOpen(false);
@@ -49,35 +49,40 @@ const ResultsSummary: React.FC<ResultsSummaryProps> = ({ visible =true, results,
     setSelectedResult(null);
   }, []);
 
-  const handleHideClick = useCallback((id: string) => {
-    setFilteredResults(prevResults =>
-      prevResults.map(result =>
-        result.id === id ? { ...result, visible: !result.visible } : result
-      )
-    );
-  }, []);
 
-  // Verifica si el objeto enviado por props está vacio
+  const handleHideClick = useCallback((id: string) => {
+    setFilteredResults(prevResults => {
+      const updatedResults = prevResults.map(result =>
+        result.id === id ? { ...result, visible: !result.visible } : result
+      );
+      const newFilteredResults = updatedResults.filter(result => result.visible === visible);
+      return newFilteredResults;
+    });
+  }, [visible]);
+
   const noResultsMessage = filteredResults.length === 0 && !loading && (
-    <p className="text-red-500">No se ha hecho ningún análisis.</p>
+    <p className="text-red-500 text-center">No se ha hecho ningún análisis.</p>
   );
 
   return (
-    <div className="bg-white p-4 shadow-md rounded-lg mb-4">
-      <h3 className="text-lg font-semibold mb-2">Resultados de la IA</h3>
+    <div className="bg-gray-100 min-w-[350px] p-6 shadow-md rounded-lg mb-6">
+      <h3 className="text-lg font-semibold mb-4">Resultados de la IA</h3>
       {loading ? (
         <LoadingState showError={showError} />
       ) : (
         <div>
           {noResultsMessage}
-          <div className="flex flex-wrap justify-between">
+          <div className="grid-container gap-6">
             {filteredResults.map(result => (
-              <ResultItemCard
-                key={result.id}
-                result={result}
-                onEditClick={handleEditClick}
-                onHideClick={handleHideClick}
-              />
+              <div key={result.id} className="flex justify-center">
+                <div className="w-full min-w-[350px]">
+                  <ResultItemCard
+                    result={result}
+                    onEditClick={handleEditClick}
+                    onHideClick={() => handleHideClick(result.id)}
+                  />
+                </div>
+              </div>
             ))}
           </div>
         </div>

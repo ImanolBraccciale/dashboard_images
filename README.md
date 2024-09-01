@@ -1,3 +1,4 @@
+
   
  # Proyecto Dashboard y Login Modal
 ## Tabla de Contenidos
@@ -7,6 +8,8 @@
 3. [Componentes](#Componentes)
 4. [Imágenes](#imágenes)
 5. [Video](#video)
+6. [Instrucciones para Ejecutar el Frontend](#instrucciones-para-ejecutar-el-frontend)
+
 ## Descripción
 Este proyecto consiste en una aplicación React que incluye:
 
@@ -229,15 +232,136 @@ La aplicación utiliza hooks personalizados y un enrutamiento básico para la na
 - **Vista previa de imagen:** Muestra una vista previa de la imagen seleccionada.
 - **Simulación de carga:** Simula el proceso de carga de la imagen y muestra los resultados después de un retraso.
 
-## Imagenes
+Aquí hay algunas capturas de pantalla que muestran diferentes componentes y vistas de la aplicación:
+
+### Login Modal
 
 ![Login Modal](/public/login.png)
+
+### Dashboard
+
 ![Dashboard](/public/DASH.png)
-![Resultados ](/public/results.png)
+
+### Resultados
+
+![Resultados](/public/results.png)
+
+### Resultados Eliminados
+
 ![Resultados Eliminados](/public/resulDel.png)
-![Accuión rápida](/public/2.png)
-![Panel ](/public/3.png)
+
+### Acción Rápida
+
+![Acción Rápida](/public/2.png)
+
+### Panel
+
+![Panel](/public/3.png)
+
+### Caso Her2
+
 ![Caso Her2](/public/case.png)
+
+### Zoom
+
 ![Zoom](/public/z.png)
-![Skeleton ](/public/skel.png)
-![Error ](/public/error.png)
+
+### Skeleton
+
+![Skeleton](/public/skel.png)
+
+### Error
+
+![Error](/public/error.png)
+
+## **Instrucciones para Ejecutar el Frontend**
+
+   1. **Clona el repositorio**:
+      ```bash
+      git clone https://github.com/tu_usuario/tu_repositorio.git
+      ```
+
+   2. **Navega al directorio del proyecto**:
+      ```bash
+      cd tu_repositorio
+      ```
+
+   3. **Instala las dependencias**:
+      Asegúrate de tener [Node.js](https://nodejs.org/) instalado. Luego, ejecuta:
+      ```bash
+      npm install
+      ```
+      o si usas Yarn:
+      ```bash
+      yarn install
+      ```
+
+   4. **Inicia el servidor de desarrollo**:
+      Ejecuta el siguiente comando para iniciar la aplicación en modo desarrollo:
+      ```bash
+      npm run dev
+      ```
+      o si usas Yarn:
+      ```bash
+      yarn dev
+      ```
+
+   5. **Accede a la aplicación**:
+      Abre tu navegador y visita [http://localhost:3000](http://localhost:3000) para ver la aplicación en ejecución.
+
+   6. **Construye la aplicación para producción**:
+      Para crear una versión optimizada para producción, ejecuta:
+      ```bash
+      npm run build
+      ```
+      o si usas Yarn:
+      ```bash
+      yarn build
+      ```
+
+   7. **Ejecuta la aplicación en modo producción**:
+      Una vez construida, puedes ejecutar la aplicación en modo producción con:
+      ```bash
+      npm start
+      ```
+      o si usas Yarn:
+      ```bash
+      yarn start
+      ```
+   8. **Entrar a la dashboard**:
+        Puedes usar el usuario y contraseña que se encuentra en el Hooks/Dashboard/hooks.tsx
+      ```bash
+        usuario = test@example.com
+        contraseña = 1234
+      ```
+      o entrar directamente pegando la url :
+      ```bash
+            http://localhost:3000/pages/DashBoard
+
+      ```
+
+      **EXTRA**
+
+ ## **Instrucciones para Construir y Ejecutar el Frontend con Docker**
+
+   1. **Instala Docker**:
+      Asegúrate de tener [Docker](https://www.docker.com/get-started) instalado en tu máquina.
+
+   2. **Construye la imagen Docker**:
+      Navega al directorio del proyecto y ejecuta el siguiente comando para construir la imagen Docker:
+      ```bash
+      docker build -t dashboard_images.
+      ```
+
+   3. **Ejecuta el contenedor Docker**:
+      Una vez que la imagen se haya construido, ejecuta el contenedor con el siguiente comando:
+      ```bash
+      docker run -p 80:80 dashboard_images
+      ```
+
+   4. **Accede a la aplicación**:
+      Abre tu navegador y visita [http://localhost](http://localhost) para ver la aplicación en ejecución dentro del contenedor Docker.
+
+   5. **Opcional: Ejecuta en modo desarrollo**:
+      Si necesitas ejecutar la aplicación en modo desarrollo dentro de un contenedor Docker, puedes modificar el `Dockerfile` para utilizar `npm run dev` en lugar de `npm run build`, y luego construir y ejecutar el contenedor de manera similar.
+

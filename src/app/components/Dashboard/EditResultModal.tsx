@@ -85,16 +85,7 @@ const EditResultModal: React.FC<EditResultModalProps> = ({
               className="border ml-2 p-1 rounded w-full"
             />
           </label>
-          <label className="block mb-1">
-            <input
-              type="checkbox"
-              name="isDeleted"
-              checked={formData.visible}
-              onChange={handleChange}
-              className="mr-2"
-            />
-            Mark as Deleted
-          </label>
+         
         </div>
         <div className="flex justify-end space-x-4">
           <button
