@@ -6,10 +6,11 @@
 1. [Descripción](#descripción)
 2. [Estructura del Proyecto](#estructura-del-proyecto)
 3. [Componentes](#Componentes)
-4. [Imágenes](#imágenes)
-5. [Video](#video)
+4. [Imágenes](#Imágenes)
+5. [Mobile](#Mobile)
 6. [Instrucciones para Ejecutar el Frontend](#instrucciones-para-ejecutar-el-frontend)
-
+6. [Instrucciones para Construir y Ejecutar el Frontend con Docker](#Instrucciones-para-Construir-y-Ejecutar-el-Frontend-con-Docker)
+ 
 ## Descripción
 Este proyecto consiste en una aplicación React que incluye:
 
@@ -234,6 +235,9 @@ La aplicación utiliza hooks personalizados y un enrutamiento básico para la na
 
 Aquí hay algunas capturas de pantalla que muestran diferentes componentes y vistas de la aplicación:
 
+
+### Imágenes
+
 ### Login Modal
 
 ![Login Modal](/public/login.png)
@@ -253,6 +257,10 @@ Aquí hay algunas capturas de pantalla que muestran diferentes componentes y vis
 ### Acción Rápida
 
 ![Acción Rápida](/public/2.png)
+
+### Modal Edit
+
+![Modal Edit](/public/edit.png)
 
 ### Panel
 
@@ -274,16 +282,22 @@ Aquí hay algunas capturas de pantalla que muestran diferentes componentes y vis
 
 ![Error](/public/error.png)
 
+## Mobile 
+![Mobile Panel](/public/mpanes.png)
+![Mobile Menu](/public/mmenu.png)
+![Mobile Results](/public/mresults.png)
+![Mobile Upload](/public/mupload.png)
+
 ## **Instrucciones para Ejecutar el Frontend**
 
    1. **Clona el repositorio**:
       ```bash
-      git clone https://github.com/tu_usuario/tu_repositorio.git
+         https://github.com/ImanolBraccciale/dashboard_images.git
       ```
 
    2. **Navega al directorio del proyecto**:
       ```bash
-      cd tu_repositorio
+      cd dashboard_images
       ```
 
    3. **Instala las dependencias**:
@@ -356,7 +370,7 @@ Aquí hay algunas capturas de pantalla que muestran diferentes componentes y vis
    3. **Ejecuta el contenedor Docker**:
       Una vez que la imagen se haya construido, ejecuta el contenedor con el siguiente comando:
       ```bash
-      docker run -p 80:80 dashboard_images
+      docker run -p 3000:3000 dashboard_images
       ```
 
    4. **Accede a la aplicación**:

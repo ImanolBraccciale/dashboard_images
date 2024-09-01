@@ -78,12 +78,12 @@ const UploadImageModal: React.FC<UploadImageModalProps> = ({ isOpen, onRequestCl
             onClick={() => setOpenOptions(!openOptions)}
             disabled={isLoading} // Desactiva el botón mientras se carga
           >
-            {selectedItem || 'Seleccionar Ítem'}
+            {selectedItem || 'Select Item'}
             {openOptions ? <ChevronUpIcon className="h-5 w-5" /> : <ChevronDownIcon className="h-5 w-5" />}
           </button>
           <div className={`transition-max-height duration-300 ease-in-out overflow-hidden ${openOptions ? 'max-h-40' : 'max-h-0'}`}>
             <ul className="mt-2 border border-gray-300 rounded-lg">
-              {['Gleason', 'KI67', 'Her2', 'Estrógeno', 'Progesterona'].map(item => (
+              {['Gleason', 'KI67', 'Her2', 'Estrógen', 'Progesterone'].map(item => (
                 <li key={item}>
                   <button
                     className={`block w-full text-left py-2 px-4 hover:bg-gray-100 ${selectedItem === item ? 'bg-gray-200' : ''}`}
