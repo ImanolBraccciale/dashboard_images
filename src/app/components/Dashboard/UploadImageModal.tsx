@@ -43,8 +43,8 @@ const UploadImageModal: React.FC<UploadImageModalProps> = ({ isOpen, onRequestCl
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-50">
       <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md relative">
         <div className="flex items-center justify-between border-b border-gray-300 pb-2 mb-4">
-          <h3 className="text-xl font-semibold">Cargar Nueva Imagen</h3>
-          <button
+        <h3 className="text-xl font-semibold">Upload New Image</h3>
+        <button
             className="text-gray-600 hover:text-gray-800"
             onClick={onRequestClose}
           >
@@ -53,8 +53,8 @@ const UploadImageModal: React.FC<UploadImageModalProps> = ({ isOpen, onRequestCl
         </div>
 
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700 mb-2">Seleccionar Imagen</label>
-          <input
+        <label className="block text-sm font-medium text-gray-700 mb-2">Select Image</label>
+        <input
             type="file"
             accept="image/*"
             onChange={handleImageChange}
@@ -101,7 +101,7 @@ const UploadImageModal: React.FC<UploadImageModalProps> = ({ isOpen, onRequestCl
         {isLoading && (
           <div className="absolute inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-10 rounded-lg">
             <div className="text-white font-semibold">
-              <p>Subiendo imagen...</p>
+            <p>Uploading image...</p>
               <div className="mt-2 w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
                 <div className="h-full bg-blue-500 animate-pulse" style={{ width: '100%' }} />
               </div>
@@ -115,14 +115,14 @@ const UploadImageModal: React.FC<UploadImageModalProps> = ({ isOpen, onRequestCl
             onClick={onRequestClose}
             disabled={isLoading} // Desactiva el botón de cancelar mientras se carga
           >
-            Cancelar
+            Cancel
           </button>
           <button
             className="bg-blue-500 text-white px-4 py-2 rounded-md"
             onClick={handleSubmit}
             disabled={isLoading} // Desactiva el botón de enviar mientras se carga
           >
-            {isLoading ? 'Subiendo...' : 'Subir Imagen'}
+            {isLoading ? 'Uploading image...' : 'Upload Image'}
           </button>
         </div>
       </div>

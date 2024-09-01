@@ -14,7 +14,7 @@ const EditResultModal: React.FC<EditResultModalProps> = ({
     WrongTotalCells: result?.WrongTotalCells || 0,
     WrongPositiveCells: result?.WrongPositiveCells || 0,
     WrongNegativeCells: result?.WrongNegativeCells || 0,
-    visible: result?.visible || false,   
+    visible: result?.visible || false,
   });
 
   if (!isOpen) return null;
@@ -26,14 +26,14 @@ const EditResultModal: React.FC<EditResultModalProps> = ({
       [name]: type === 'checkbox' ? checked : parseInt(value, 10) || 0
     }));
   };
-// pasar los resultados completo
+  // pasar los resultados completo
   const handleSave = () => {
     if (result) {
       const updatedResult = {
         ...result,
         ...formData
       };
-      onUpdate(updatedResult);  
+      onUpdate(updatedResult);
     }
     onRequestClose();
   };
@@ -53,7 +53,7 @@ const EditResultModal: React.FC<EditResultModalProps> = ({
         >
           X
         </button>
-        <h3 className="text-lg font-semibold mb-4">Editar Resultado</h3>
+        <h3 className="text-lg font-semibold mb-4">Edit Result</h3>
         <div className="mb-4">
           <label className="block mb-1">
             Wrong Total Cells:
@@ -85,20 +85,20 @@ const EditResultModal: React.FC<EditResultModalProps> = ({
               className="border ml-2 p-1 rounded w-full"
             />
           </label>
-         
+
         </div>
         <div className="flex justify-end space-x-4">
           <button
             onClick={handleSave}
             className="bg-blue-500 text-white px-4 py-2 rounded"
           >
-            Aceptar
+            Accept
           </button>
           <button
             onClick={onRequestClose}
             className="bg-gray-300 text-black px-4 py-2 rounded"
           >
-            Cancelar
+            Cancel
           </button>
         </div>
       </div>

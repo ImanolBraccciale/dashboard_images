@@ -5,12 +5,12 @@ import React from 'react';
 const QuickActions: React.FC<QuickActionsProps> = ({ onOpenModal }) => {
   return (
     <div className="bg-white p-4 shadow-md rounded-lg max-w-lg mx-0">
-      <h2 className="text-xl font-semibold mb-2">Acciones Rápidas</h2>
+      <h2 className="text-xl font-semibold mb-2">Quick Actions</h2>
       <button
         className="bg-green-500 text-white px-4 py-2 rounded"
         onClick={onOpenModal}
       >
-        Cargar Imagen
+        Upload Image
       </button>
     </div>
   );

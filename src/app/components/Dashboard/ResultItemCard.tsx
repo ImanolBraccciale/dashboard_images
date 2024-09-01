@@ -9,7 +9,7 @@ const ResultItemCard: React.FC<ResultItemCardProps> = ({ result, onEditClick, on
       <div>
         <div className="flex flex-col lg:flex-row gap-6 mb-4">
           <div className="flex flex-col justify-center lg:justify-start items-center lg:items-start w-full">  
-            <h4 className="text-md font-semibold mb-2 text-center lg:text-left">Imagen</h4>
+            <h4 className="text-md font-semibold mb-2 text-center lg:text-left">Original Image</h4>
             <div className="flex justify-center lg:justify-start w-full">  
               <ImageMagnifier src={result.originalImageUrl} />
             </div>

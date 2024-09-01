@@ -49,7 +49,7 @@ const Sidebar: React.FC<SidebarProps & { isOpen: boolean; onToggleSidebar: () =>
                   handleLogout();
                 }}
               >
-                Inicio
+                Home
               </a>
             </li>
             <li>
@@ -61,8 +61,8 @@ const Sidebar: React.FC<SidebarProps & { isOpen: boolean; onToggleSidebar: () =>
                   handleItemClick('DashBoard');
                 }}
               >
-                Perfil
-              </a>
+                Profile
+                </a>
             </li>
             <li>
               <a
@@ -73,7 +73,7 @@ const Sidebar: React.FC<SidebarProps & { isOpen: boolean; onToggleSidebar: () =>
                   handleItemClick('results');
                 }}
               >
-                Resultados
+                Results
               </a>
             </li>
             <li>
@@ -85,15 +85,15 @@ const Sidebar: React.FC<SidebarProps & { isOpen: boolean; onToggleSidebar: () =>
                   handleItemClick('deletedResults');
                 }}
               >
-                Resultados Eliminados
-              </a>
+                Deleted Results
+                </a>
             </li>
             <li>
               <button
                 className="w-full text-left py-2 px-4 hover:bg-gray-700 flex items-center justify-between"
                 onClick={() => setOpenProstate(!openProstate)}
               >
-                Cáncer de Próstata
+                Prostate Cancer
                 {openProstate ? <ChevronUpIcon className="h-5 w-5" /> : <ChevronDownIcon className="h-5 w-5" />}
               </button>
               <div className={`transition-max-height duration-300 ease-in-out overflow-hidden ${openProstate ? 'max-h-40' : 'max-h-0'}`}>
@@ -118,7 +118,7 @@ const Sidebar: React.FC<SidebarProps & { isOpen: boolean; onToggleSidebar: () =>
                 className="w-full text-left py-2 px-4 hover:bg-gray-700 flex items-center justify-between"
                 onClick={() => setOpenBreast(!openBreast)}
               >
-                Cáncer de Mama
+                Breast Cancer
                 {openBreast ? <ChevronUpIcon className="h-5 w-5" /> : <ChevronDownIcon className="h-5 w-5" />}
               </button>
               <div className={`transition-max-height duration-300 ease-in-out overflow-hidden ${openBreast ? 'max-h-40' : 'max-h-0'}`}>
@@ -156,8 +156,8 @@ const Sidebar: React.FC<SidebarProps & { isOpen: boolean; onToggleSidebar: () =>
                         handleItemClick('Estrógeno');
                       }}
                     >
-                      Estrógeno
-                    </a>
+                      Estrogen
+                      </a>
                   </li>
                   <li>
                     <a
@@ -168,8 +168,8 @@ const Sidebar: React.FC<SidebarProps & { isOpen: boolean; onToggleSidebar: () =>
                         handleItemClick('Progesterona');
                       }}
                     >
-                      Progesterona
-                    </a>
+                      Progesterone
+                      </a>
                   </li>
                 </ul>
               </div>

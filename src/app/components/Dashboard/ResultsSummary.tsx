@@ -61,12 +61,12 @@ const ResultsSummary: React.FC<ResultsSummaryProps> = ({ visible = true, results
   }, [visible]);
 
   const noResultsMessage = filteredResults.length === 0 && !loading && (
-    <p className="text-red-500 text-center">No se ha hecho ningún análisis.</p>
+    <p className="text-red-500 text-center">No results available.</p>
   );
 
   return (
     <div className="bg-gray-100 min-w-[350px] p-6 shadow-md rounded-lg mb-6">
-      <h3 className="text-lg font-semibold mb-4">Resultados de la IA</h3>
+      <h3 className="text-lg font-semibold mb-4">AI Results</h3>
       {loading ? (
         <LoadingState showError={showError} />
       ) : (
